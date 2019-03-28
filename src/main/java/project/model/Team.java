@@ -1,5 +1,6 @@
 package project.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,28 +14,27 @@ import java.util.Set;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "players")
-public class Player {
+@Table(name = "teams")
+public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String name;
-    private String goals;
-
-    @OneToMany(mappedBy = "player", cascade = CascadeType.PERSIST)
-    private Set<PlayersCards> PlayersCards;
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "position_id")
-    private Position positionId;
+    private Integer points;
     @OneToOne
-    @JoinColumn(name = "healt_card_id")
-    private HealtCards healtCard;
+    @JoinColumn(name = "managerId")
+    private Manager manager;
+
+    @OneToMany(mappedBy = "team")
+    private Set<Contract> contracts;
     @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
+    @JoinColumn(name = "stadium_id")
+    private Stadium stadium;
+
+    @OneToMany(mappedBy = "team")
+    private Set<Player> players;
 
     @ManyToOne
     @JoinColumn(name = "country_id")

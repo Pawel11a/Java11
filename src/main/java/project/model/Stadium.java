@@ -1,6 +1,5 @@
 package project.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,21 +8,28 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
 @Entity
-@Table(name = "position")
-public class Position {
+@Table(name = "stadiums")
+public class Stadium {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String name;
+    private Integer capacity;
 
-    @OneToMany(mappedBy = "positionId",cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "stadium")
+    private Set<Team> teams;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
+
+    @OneToMany(mappedBy = "country")
     private Set<Player> players;
-
 
 }

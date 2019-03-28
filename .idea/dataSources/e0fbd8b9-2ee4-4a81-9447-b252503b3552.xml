@@ -1120,207 +1120,447 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="282" parent="5" name="cards"/>
-    <table id="283" parent="5" name="countries"/>
-    <table id="284" parent="5" name="hibernate_sequence"/>
-    <table id="285" parent="5" name="managers"/>
-    <table id="286" parent="5" name="players"/>
-    <table id="287" parent="5" name="players_cards"/>
-    <table id="288" parent="5" name="position"/>
-    <column id="289" parent="282" name="id">
+    <table id="283" parent="5" name="companies"/>
+    <table id="284" parent="5" name="contracts"/>
+    <table id="285" parent="5" name="countries"/>
+    <table id="286" parent="5" name="healt_cards"/>
+    <table id="287" parent="5" name="hibernate_sequence"/>
+    <table id="288" parent="5" name="managers"/>
+    <table id="289" parent="5" name="players"/>
+    <table id="290" parent="5" name="players_cards"/>
+    <table id="291" parent="5" name="position"/>
+    <table id="292" parent="5" name="stadiums"/>
+    <table id="293" parent="5" name="teams"/>
+    <column id="294" parent="282" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="282" name="color">
+    <column id="295" parent="282" name="color">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="291" parent="282" name="PRIMARY">
+    <key id="296" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="292" parent="283" name="id">
+    <column id="297" parent="283" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="283" name="capital">
+    <column id="298" parent="283" name="budget">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="283" name="name">
+    <column id="299" parent="283" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="295" parent="283" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="296" parent="284" name="next_val">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="297" parent="285" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="298" parent="285" name="age">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="299" parent="285" name="name">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="300" parent="285" name="surname">
+    <column id="300" parent="283" name="country_id">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="301" parent="285" name="country_id">
-      <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="302" parent="285" name="FKl6m3g4mubgj96okpfcpf0kj29">
+    <index id="301" parent="283" name="FKgxxhbvgpkekmmrpvwsjei1aq5">
       <ColNames>country_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="303" parent="285" name="PRIMARY">
+    <key id="302" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="304" parent="285" name="FKl6m3g4mubgj96okpfcpf0kj29">
+    <foreign-key id="303" parent="283" name="FKgxxhbvgpkekmmrpvwsjei1aq5">
       <ColNames>country_id</ColNames>
       <RefSchemaName>my_project_hibernate</RefSchemaName>
       <RefTableName>countries</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="305" parent="286" name="id">
+    <column id="304" parent="284" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="286" name="countryId">
+    <column id="305" parent="284" name="cost">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>decimal(19,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="286" name="goals">
+    <column id="306" parent="284" name="expirationDate">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="286" name="healthCardId">
+    <column id="307" parent="284" name="company_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="286" name="name">
+    <column id="308" parent="284" name="team_id">
       <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="309" parent="284" name="FKn5pkn19y02t2psn9puo74jign">
+      <ColNames>company_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="310" parent="284" name="FK1bppxhr6dm3erg1y18tjpjshq">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="311" parent="284" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="312" parent="284" name="FKn5pkn19y02t2psn9puo74jign">
+      <ColNames>company_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>companies</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="313" parent="284" name="FK1bppxhr6dm3erg1y18tjpjshq">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="314" parent="285" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="285" name="capital">
+      <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="286" name="teamId">
+    <column id="316" parent="285" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="317" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="318" parent="286" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="319" parent="286" name="examinationDate">
+      <Position>2</Position>
+      <DataType>datetime(6)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="320" parent="286" name="notes">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="321" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="322" parent="287" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="323" parent="288" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="324" parent="288" name="age">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="325" parent="288" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="326" parent="288" name="surname">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="327" parent="288" name="country_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="328" parent="288" name="FKl6m3g4mubgj96okpfcpf0kj29">
+      <ColNames>country_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="329" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="330" parent="288" name="FKl6m3g4mubgj96okpfcpf0kj29">
+      <ColNames>country_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>countries</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="331" parent="289" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="332" parent="289" name="goals">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="333" parent="289" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="334" parent="289" name="country_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="289" name="healt_card_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="289" name="position_id">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="286" name="positionId_id">
+    <column id="337" parent="289" name="team_id">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="312" parent="286" name="FKngcbmdv3xplx0mcv83bs1jeh8">
-      <ColNames>positionId_id</ColNames>
+    <index id="338" parent="289" name="FKqntvf7pxlrop31khocahqiclo">
+      <ColNames>country_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="313" parent="286" name="PRIMARY">
+    <index id="339" parent="289" name="FKljp7k0m6qswsgr9bwjcaxs9qo">
+      <ColNames>healt_card_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="340" parent="289" name="FK95epnq15ml6pech6xkbbv16kc">
+      <ColNames>position_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="341" parent="289" name="FK5nglidr00c4dyybl171v6kask">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="342" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="314" parent="286" name="FKngcbmdv3xplx0mcv83bs1jeh8">
-      <ColNames>positionId_id</ColNames>
+    <foreign-key id="343" parent="289" name="FKqntvf7pxlrop31khocahqiclo">
+      <ColNames>country_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>countries</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="344" parent="289" name="FKljp7k0m6qswsgr9bwjcaxs9qo">
+      <ColNames>healt_card_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>healt_cards</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="345" parent="289" name="FK95epnq15ml6pech6xkbbv16kc">
+      <ColNames>position_id</ColNames>
       <RefSchemaName>my_project_hibernate</RefSchemaName>
       <RefTableName>position</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="315" parent="287" name="id">
+    <foreign-key id="346" parent="289" name="FK5nglidr00c4dyybl171v6kask">
+      <ColNames>team_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>teams</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="347" parent="290" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="287" name="cardId">
+    <column id="348" parent="290" name="card_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="287" name="card_id">
+    <column id="349" parent="290" name="players_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="287" name="players_id">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="319" parent="287" name="FKrfhcmsl9l407jgepjyppjhra2">
+    <index id="350" parent="290" name="FKrfhcmsl9l407jgepjyppjhra2">
       <ColNames>card_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="320" parent="287" name="FK3fakrp10fn5pq14ml5lfy4oap">
+    <index id="351" parent="290" name="FK3fakrp10fn5pq14ml5lfy4oap">
       <ColNames>players_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="321" parent="287" name="PRIMARY">
+    <key id="352" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="322" parent="287" name="FKrfhcmsl9l407jgepjyppjhra2">
+    <foreign-key id="353" parent="290" name="FKrfhcmsl9l407jgepjyppjhra2">
       <ColNames>card_id</ColNames>
       <RefSchemaName>my_project_hibernate</RefSchemaName>
       <RefTableName>cards</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="323" parent="287" name="FK3fakrp10fn5pq14ml5lfy4oap">
+    <foreign-key id="354" parent="290" name="FK3fakrp10fn5pq14ml5lfy4oap">
       <ColNames>players_id</ColNames>
       <RefSchemaName>my_project_hibernate</RefSchemaName>
       <RefTableName>players</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="324" parent="288" name="id">
+    <column id="355" parent="291" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="288" name="name">
+    <column id="356" parent="291" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="326" parent="288" name="PRIMARY">
+    <key id="357" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="358" parent="292" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="359" parent="292" name="capacity">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="360" parent="292" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="292" name="country_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="362" parent="292" name="FKid00bopd8058k13dbq3cipi6t">
+      <ColNames>country_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="363" parent="292" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="364" parent="292" name="FKid00bopd8058k13dbq3cipi6t">
+      <ColNames>country_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>countries</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="365" parent="293" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="366" parent="293" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="367" parent="293" name="points">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="368" parent="293" name="country_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="369" parent="293" name="managerId">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="370" parent="293" name="stadium_id">
+      <Position>6</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="371" parent="293" name="FK7oxg99kw26u7w7swuu6tivxmr">
+      <ColNames>country_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="372" parent="293" name="FKmuvbkhq5l4e4wshemk0hwnxnr">
+      <ColNames>managerId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="373" parent="293" name="FKpmiefb1tdyvxsk0dn5t0publq">
+      <ColNames>stadium_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="374" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="375" parent="293" name="FK7oxg99kw26u7w7swuu6tivxmr">
+      <ColNames>country_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>countries</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="376" parent="293" name="FKmuvbkhq5l4e4wshemk0hwnxnr">
+      <ColNames>managerId</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>managers</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="377" parent="293" name="FKpmiefb1tdyvxsk0dn5t0publq">
+      <ColNames>stadium_id</ColNames>
+      <RefSchemaName>my_project_hibernate</RefSchemaName>
+      <RefTableName>stadiums</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

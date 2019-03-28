@@ -8,19 +8,19 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Set;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
-@Entity
-@Table(name = "countries")
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
+//@Data
+//@Entity
+//@Table(name = "countries")
 public class Countries {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String name;
-    private String capital;
-    @OneToMany(mappedBy = "countryId")
-    private Set<Managers> managers;
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
+//    private String name;
+//    private String capital;
+//    @OneToMany(mappedBy = "countryId")
+//    private Set<Managers> managers;
 }

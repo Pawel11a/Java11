@@ -13,7 +13,6 @@ public class PlayersCards {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Integer cardId;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "players_id")
     private Player player;
