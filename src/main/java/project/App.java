@@ -1,38 +1,27 @@
 package project;
 
-import javax.persistence.Persistence;
+import project.repository.impl.CountryRepositoryImpl;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
 
-        var sessionFactory = Persistence.createEntityManagerFactory("MY_PROJECT_HIBERNATE");
+        var countryRepository = new CountryRepositoryImpl();
 
-        var session = sessionFactory.createEntityManager();
+        // countryRepository.saveOrUpdate(Country.builder().name("GER").capital("BER").build());
+        // countryRepository.saveOrUpdate(Country.builder().name("UK").capital("LON").build());
 
-        var trans = session.getTransaction();
+        // countryRepository.saveOrUpdate(Country.builder().id(1L).name("FRA").capital("PAR").build());
 
-//        try {
-//            trans.begin();
-//
-//            System.out.println("w transakcji");
-//            trans.commit();
-//        } catch (Exception ex) {
-//            if (trans != null) {
-//                trans.rollback();
-//            }
-//        } finally {
-//            if (session != null) {
-//                session.close();
-//            }
-//
-//            if (sessionFactory != null) {
-//                sessionFactory.close();
-//            }
-//        }
+        // countryRepository.findAll().forEach(System.out::println);
+
+        // countryRepository.findById(1L).ifPresent(System.out::println);
+
+        // countryRepository.delete(1L);
+
+        countryRepository.findByName("GER").ifPresent(System.out::println);
 
     }
 }

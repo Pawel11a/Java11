@@ -19,7 +19,7 @@ public class Position {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
 
     @OneToMany(mappedBy = "positionId",cascade = CascadeType.PERSIST)

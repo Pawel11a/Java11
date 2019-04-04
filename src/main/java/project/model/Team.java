@@ -19,12 +19,12 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String name;
     private Integer points;
     @OneToOne
-    @JoinColumn(name = "managerId")
+    @JoinColumn(name = "manager_id")
     private Manager manager;
 
     @OneToMany(mappedBy = "team")

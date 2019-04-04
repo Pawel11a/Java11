@@ -7,17 +7,17 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name ="players_cards")
-public class PlayersCards {
+public class PlayerCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "players_id")
     private Player player;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "card_id")
     private Card card;
 

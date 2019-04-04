@@ -9,7 +9,7 @@ import java.util.Date;
 public class Contract {
 
     @Id@GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private BigDecimal cost;
     private Date expirationDate;
 

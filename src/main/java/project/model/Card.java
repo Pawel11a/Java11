@@ -17,11 +17,11 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String color;
 
     @OneToMany(mappedBy = "card", cascade = CascadeType.PERSIST)
-    private Set<PlayersCards> playersCards;
+    private Set<PlayerCard> playerCards;
 
 
 

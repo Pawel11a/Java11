@@ -18,20 +18,20 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String name;
     private String goals;
 
     @OneToMany(mappedBy = "player", cascade = CascadeType.PERSIST)
-    private Set<PlayersCards> PlayersCards;
+    private Set<PlayerCard> PlayerCards;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "position_id")
     private Position positionId;
     @OneToOne
     @JoinColumn(name = "healt_card_id")
-    private HealtCards healtCard;
+    private HealtCard healtCard;
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;

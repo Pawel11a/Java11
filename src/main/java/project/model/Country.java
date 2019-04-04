@@ -1,9 +1,6 @@
 package project.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,24 +15,34 @@ public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String name;
     private String capital;
 
     @OneToMany(mappedBy = "country")
-    private Set<Manager> manager;
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Set<Manager> managers;
 
     @OneToMany(mappedBy = "country")
-    private Set<Company> company;
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Set<Company> companies;
 
     @OneToMany(mappedBy = "country")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Stadium> stadiums;
 
     @OneToMany(mappedBy = "country")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Team> teams;
 
     @OneToMany(mappedBy = "country")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Player> players;
 
 
